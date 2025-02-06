@@ -263,9 +263,9 @@ class _AddBusinessSettingState extends State<AddFormulaDialog> {
                     children: [
                       InputText(
                           label: l.S.current.factory_formula_name,
-                          isDisable: widget.mFormula != null,
+                          isReadOnly: widget.mFormula != null,
                           controller: _ctrlFormulaName,
-                          onChange: (value) {
+                          onChanged: (value) {
                             setState(() {
                               _ctrlFormulaCloneName.text = value;
                             });

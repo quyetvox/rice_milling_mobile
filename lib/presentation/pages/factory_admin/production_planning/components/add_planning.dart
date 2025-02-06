@@ -332,9 +332,9 @@ class _AddBusinessSettingState extends State<AddPlanningDialog> {
                       const SizedBox(height: 20),
                       InputText(
                           label: l.S.current.factory_total_batch_qty,
-                          isDisable: widget.mProductionPlanning != null,
+                          isReadOnly: widget.mProductionPlanning != null,
                           keyboardType: TextInputType.number,
-                          onChange: (value) {
+                          onChanged: (value) {
                             resetAutocompleteData();
                           },
                           controller: _ctrlTotalBatchQty),

@@ -32,6 +32,7 @@ migrate_working_dir/
 /build/
 /web/
 docker*
+/promt
 
 # Symbolication related
 app.*.symbols

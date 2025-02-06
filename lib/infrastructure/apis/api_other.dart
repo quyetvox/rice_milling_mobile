@@ -82,4 +82,17 @@ class ApiOther {
       return {};
     }
   }
+
+  static Future<List<dynamic>> catalogues() async {
+    try {
+      String url = ('${AppConfig.BASE_URL}/master/dropdown');
+      final response = await ApiRequest.get(url: url);
+      return json.decode(response.body)['data'] ?? [];
+    } catch (e) {
+      if (kDebugMode) {
+        print("ApiOther catalogues error: $e");
+      }
+      return [];
+    }
+  }
 }

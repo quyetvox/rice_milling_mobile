@@ -378,55 +378,84 @@ Map<String, RouteBreadcrumbModel> get routerParam {
       parentRoute: 'Pages',
       childRoute: 'Base',
     ),
-    '/factory-admin/ingredient': RouteBreadcrumbModel(
+
+    ///for factory admin
+    '/factory-admin/sourcing-material': RouteBreadcrumbModel(
       title: l.S.current.factory_raw_material,
       parentRoute: 'factory-admin',
-      childRoute: 'ingredient',
+      childRoute: 'sourcing-material',
     ),
-    '/factory-admin/formula': RouteBreadcrumbModel(
-      title: l.S.current.factory_formula,
-      parentRoute: 'factory-admin',
-      childRoute: 'formula',
-    ),
-    '/factory-admin/production-batch': RouteBreadcrumbModel(
-      title: l.S.current.factory_planning,
-      parentRoute: 'factory-admin',
-      childRoute: 'production-batch',
-    ),
-    '/stage/mixing': RouteBreadcrumbModel(
-      title: l.S.current.stage_mixing,
+    // '/factory-admin/formula': RouteBreadcrumbModel(
+    //   title: l.S.current.factory_formula,
+    //   parentRoute: 'factory-admin',
+    //   childRoute: 'formula',
+    // ),
+    // '/factory-admin/production-batch': RouteBreadcrumbModel(
+    //   title: l.S.current.factory_planning,
+    //   parentRoute: 'factory-admin',
+    //   childRoute: 'production-batch',
+    // ),
+
+    ///for factory supervisor
+    '/stage/pre-processing-qc': const RouteBreadcrumbModel(
+      title: 'Pre-Processing QC',
       parentRoute: 'stage',
-      childRoute: 'mixing',
+      childRoute: 'pre-processing-qc',
     ),
-    '/stage/incubation': RouteBreadcrumbModel(
-      title: l.S.current.stage_incubation,
+    '/stage/pre-cleaning': const RouteBreadcrumbModel(
+      title: 'Pre-cleaning',
       parentRoute: 'stage',
-      childRoute: 'incubation',
+      childRoute: 'pre-cleaning',
     ),
-    '/stage/screening': RouteBreadcrumbModel(
-      title: l.S.current.stage_screening,
+    '/stage/drying': const RouteBreadcrumbModel(
+      title: 'Drying',
       parentRoute: 'stage',
-      childRoute: 'screening',
+      childRoute: 'drying',
     ),
-    '/stage/final-processing': RouteBreadcrumbModel(
-      title: l.S.current.stage_final_processing,
+    '/stage/storage': const RouteBreadcrumbModel(
+      title: 'Storage',
       parentRoute: 'stage',
-      childRoute: 'final-processing',
+      childRoute: 'storage',
     ),
-    '/stage/qc-check': RouteBreadcrumbModel(
-      title: l.S.current.stage_quality_contol_check,
+    '/stage/husking': const RouteBreadcrumbModel(
+      title: 'Husking',
       parentRoute: 'stage',
-      childRoute: 'qc-check',
+      childRoute: 'husking',
     ),
-    '/stage/packaging': RouteBreadcrumbModel(
-      title: l.S.current.stage_packaging,
+    '/stage/brown-rice-milling': const RouteBreadcrumbModel(
+      title: 'Brown Rice Milling',
+      parentRoute: 'stage',
+      childRoute: 'brown-rice-milling',
+    ),
+    '/stage/de-stoning': const RouteBreadcrumbModel(
+      title: 'De-stoning',
+      parentRoute: 'stage',
+      childRoute: 'de-stoning',
+    ),
+    '/stage/whitening-semi-polishing': const RouteBreadcrumbModel(
+      title: 'whitening & Semi Polishing',
+      parentRoute: 'stage',
+      childRoute: 'whitening-semi-polishing',
+    ),
+    '/stage/sortex': const RouteBreadcrumbModel(
+      title: 'Sortex',
+      parentRoute: 'stage',
+      childRoute: 'sortex',
+    ),
+    '/stage/final-qc': const RouteBreadcrumbModel(
+      title: 'Final QC',
+      parentRoute: 'stage',
+      childRoute: 'final-qc',
+    ),
+    '/stage/packaging': const RouteBreadcrumbModel(
+      title: 'Packaging',
       parentRoute: 'stage',
       childRoute: 'packaging',
     ),
-    '/stage/inventory': RouteBreadcrumbModel(
-      title: l.S.current.stage_inventory_for_finished_products,
+    '/stage/final-inventory': const RouteBreadcrumbModel(
+      title: 'Final Inventory',
       parentRoute: 'stage',
-      childRoute: 'inventory',
+      childRoute: 'final-inverotry',
     ),
   };
 }

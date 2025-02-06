@@ -32,6 +32,13 @@ extension IterableExtension<T> on List<T> {
     }
     return distinct;
   }
+
+  String? indexWhereOrNull(bool Function(T e) getCompareValue) {
+    for (final d in this) {
+      if (getCompareValue(d)) return indexOf(d).toString();
+    }
+    return null;
+  }
 }
 
 class ScaleSize {

@@ -4,19 +4,22 @@ import 'package:rice_milling_mobile/presentation/pages/admin/business_location/i
 import 'package:rice_milling_mobile/presentation/pages/admin/business_setting/index.dart';
 import 'package:rice_milling_mobile/presentation/pages/admin/master_product/index.dart';
 import 'package:rice_milling_mobile/presentation/pages/dashboard/pages/base.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_admin/formula/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_admin/ingredient/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_admin/production_planning/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/final_processing_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/incubation_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/inventory_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/mixing_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/packaging_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/qc_check_stage/index.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/screening_stage/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_admin/sourcing_material/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/brown_rice_milling/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/de_stoning/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/drying/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/husking/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/pre_cleaning/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/pre_processing_qc/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/final_inventory/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/packaging/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/final_qc/index.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/sortex/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/storage/index.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/whitening_semi_polishing/index.dart';
 
 // 🌎 Project imports:
 import '../pages/pages.dart';
@@ -100,64 +103,82 @@ abstract class AcnooAppRoutes {
           ),
 
           GoRoute(
-            path: '/factory-admin/ingredient',
+            path: '/factory-admin/sourcing-material',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: IngredientView(),
-            ),
-          ),
-          GoRoute(
-            path: '/factory-admin/formula',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: FormulaView(),
-            ),
-          ),
-          GoRoute(
-            path: '/factory-admin/production-batch',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: ProductionPlanningView(),
+              child: SourcingMaterialView(),
             ),
           ),
 
           GoRoute(
-            path: '/stage/mixing',
+            path: '/stage/pre-processing-qc',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: MixingStageView(),
+              child: PreProcessingQCView(),
             ),
           ),
           GoRoute(
-            path: '/stage/incubation',
+            path: '/stage/pre-cleaning',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: IncubationStageView(),
+              child: PreCleaningView(),
             ),
           ),
           GoRoute(
-            path: '/stage/screening',
+            path: '/stage/drying',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: ScreeningStageView(),
+              child: DryingView(),
             ),
           ),
           GoRoute(
-            path: '/stage/final-processing',
+            path: '/stage/storage',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: FinalProcessingStageView(),
+              child: StorageView(),
             ),
           ),
           GoRoute(
-            path: '/stage/qc-check',
+            path: '/stage/husking',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: QCCheckStageView(),
+              child: HuskingView(),
+            ),
+          ),
+          GoRoute(
+            path: '/stage/brown-rice-milling',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: BrownRiceMillingView(),
+            ),
+          ),
+          GoRoute(
+            path: '/stage/de-stoning',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: DeStoningView(),
+            ),
+          ),
+          GoRoute(
+            path: '/stage/whitening-semi-polishing',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: WhiteningAndSemiPolishingView(),
+            ),
+          ),
+          GoRoute(
+            path: '/stage/sortex',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: SortexView(),
+            ),
+          ),
+          GoRoute(
+            path: '/stage/final-qc',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: FinalQCView(),
             ),
           ),
           GoRoute(
             path: '/stage/packaging',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: PackagingStageView(),
+              child: PackagingView(),
             ),
           ),
           GoRoute(
-            path: '/stage/inventory',
+            path: '/stage/final-inventory',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: InvetoryStageView(),
+              child: FinalInventoryView(),
             ),
           ),
 

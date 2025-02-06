@@ -1,3 +1,4 @@
+import 'package:rice_milling_mobile/domain/models/other/catalogue_model.dart';
 import 'package:rice_milling_mobile/domain/models/other/country_model.dart';
 import 'package:rice_milling_mobile/domain/models/other/currency_model.dart';
 import 'package:rice_milling_mobile/domain/models/other/district_model.dart';
@@ -89,13 +90,28 @@ class AppOther {
   static Future<MPreStage?> preStage() async {
     try {
       final res = await ApiOther.preStage();
-      final datas = MPreStage.fromMap(res as Map<String, dynamic>);
+      final datas = MPreStage.fromMap(res);
       return datas;
     } catch (e) {
       if (kDebugMode) {
         print('AppOther preStage error $e');
       }
       return MPreStage.fromMap({});
+    }
+  }
+
+  static Future<List<MCatalogue>> catalogues() async {
+    try {
+      final res = await ApiOther.catalogues();
+      final datas = res
+          .map((e) => MCatalogue.fromMap(e as Map<String, dynamic>))
+          .toList();
+      return datas;
+    } catch (e) {
+      if (kDebugMode) {
+        print('AppOther catalogues error $e');
+      }
+      return [];
     }
   }
 }

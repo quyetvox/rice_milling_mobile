@@ -1,13 +1,13 @@
 import 'package:rice_milling_mobile/domain/fetch_data/models/base_nextpage_model.dart';
 import 'package:rice_milling_mobile/infrastructure/apis/stage/api_packaging.dart';
-import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/packaging_stage/models/packaging_model.dart';
+import 'package:rice_milling_mobile/presentation/pages/factory_supervisor/packaging/models/packaging.dart';
 import 'package:flutter/foundation.dart';
 
 class AppPackaging {
-  static Future<MBaseNextPage<MPackagingStage>?> fetch() async {
+  static Future<MBaseNextPage<MPackagingQC>?> fetch() async {
     try {
       final res = await ApiPackaging.fetch();
-      final datas = res.map((e) => MPackagingStage.fromJson(e)).toList();
+      final datas = res.map((e) => MPackagingQC.fromJson(e)).toList();
       return MBaseNextPage(totalPage: 1, datas: datas);
     } catch (e) {
       if (kDebugMode) {

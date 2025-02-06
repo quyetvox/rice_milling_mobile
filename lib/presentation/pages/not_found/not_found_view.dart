@@ -49,7 +49,7 @@ class NotFoundView extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 35, vertical: 12),
               ),
-              onPressed: () => context.go('/dashboard/ecommerce-admin'),
+              onPressed: () => context.go('/dashboard'),
               // label: const Text('Go Back'),
               label: Text(lang.goBack),
             )

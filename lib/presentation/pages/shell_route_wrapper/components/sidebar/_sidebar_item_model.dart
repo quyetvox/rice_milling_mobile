@@ -48,32 +48,26 @@ enum SidebarItemType { tile, submenu }
 
 List<GroupedMenuModel> get _groupedMenus {
   return <GroupedMenuModel>[
-    // Application Group
     GroupedMenuModel(
-      //name: 'Application',
       name: l.S.current.application,
       menus: [
         SidebarItemModel(
-          // name: 'Dashboard',
           name: l.S.current.dashboard,
           iconPath: 'assets/images/sidebar_icons/home-dash-star.svg',
           navigationPath: '/dashboard',
         ),
         if (SharedPreferencesProvider.instance.profile!.isAdminUser)
           SidebarItemModel(
-            //name: 'Widgets',
             name: 'Business',
             iconPath: 'assets/images/sidebar_icons/kanban.svg',
             sidebarItemType: SidebarItemType.submenu,
             navigationPath: '/admin',
             submenus: [
               SidebarSubmenuModel(
-                // name: 'General',
                 name: 'Settings',
                 navigationPath: 'business_setting',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
                 name: 'Locations',
                 navigationPath: 'business_location',
               ),
@@ -81,19 +75,16 @@ List<GroupedMenuModel> get _groupedMenus {
           ),
         if (SharedPreferencesProvider.instance.profile!.isAdminUser)
           SidebarItemModel(
-            //name: 'Widgets',
             name: 'Master',
             iconPath: 'assets/images/sidebar_icons/note-list.svg',
             sidebarItemType: SidebarItemType.submenu,
             navigationPath: '/master',
             submenus: [
               SidebarSubmenuModel(
-                // name: 'General',
                 name: 'Products',
                 navigationPath: 'product',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
                 name: 'Timezones',
                 navigationPath: '',
               ),
@@ -101,76 +92,83 @@ List<GroupedMenuModel> get _groupedMenus {
           ),
         if (SharedPreferencesProvider.instance.profile!.isFactoryAdminUser)
           SidebarItemModel(
-            //name: 'Widgets',
             name: l.S.current.factory_factory_admin,
             iconPath: 'assets/images/sidebar_icons/note-list.svg',
             sidebarItemType: SidebarItemType.submenu,
             navigationPath: '/factory-admin',
             submenus: [
               SidebarSubmenuModel(
-                // name: 'General',
                 name: l.S.current.factory_raw_material,
-                navigationPath: 'ingredient',
+                navigationPath: 'sourcing-material',
               ),
-              SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.factory_formula,
-                navigationPath: 'formula',
-              ),
-              SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.factory_planning,
-                navigationPath: 'production-batch',
-              ),
+              // SidebarSubmenuModel(
+              //   name: l.S.current.factory_formula,
+              //   navigationPath: 'formula',
+              // ),
+              // SidebarSubmenuModel(
+              //   name: l.S.current.factory_planning,
+              //   navigationPath: 'production-batch',
+              // ),
             ],
           ),
         if (SharedPreferencesProvider.instance.profile!.isFactorySupervisorUser)
           SidebarItemModel(
-            //name: 'Widgets',
             name: l.S.current.factory_stage,
             iconPath: 'assets/images/sidebar_icons/note-list.svg',
             sidebarItemType: SidebarItemType.submenu,
             navigationPath: '/stage',
             submenus: [
               SidebarSubmenuModel(
-                // name: 'General',
-                name: l.S.current.stage_mixing,
-                navigationPath: 'mixing',
+                name: 'Pre-processing QC',
+                navigationPath: 'pre-processing-qc',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_incubation,
-                navigationPath: 'incubation',
+                name: 'Pre-cleaning',
+                navigationPath: 'pre-cleaning',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_screening,
-                navigationPath: 'screening',
+                name: 'Drying',
+                navigationPath: 'drying',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_final_processing,
-                navigationPath: 'final-processing',
+                name: 'Storage',
+                navigationPath: 'storage',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_quality_contol_check,
-                navigationPath: 'qc-check',
+                name: 'Husking',
+                navigationPath: 'husking',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_packaging,
+                name: 'Brown Rice Milling',
+                navigationPath: 'brown-rice-milling',
+              ),
+              SidebarSubmenuModel(
+                name: 'De-stoning',
+                navigationPath: 'de-stoning',
+              ),
+              SidebarSubmenuModel(
+                name: 'Whitening & Semi Polishing',
+                navigationPath: 'whitening-semi-polishing',
+              ),
+              SidebarSubmenuModel(
+                name: 'Sortex',
+                navigationPath: 'sortex',
+              ),
+              SidebarSubmenuModel(
+                name: 'Final QC',
+                navigationPath: 'final-qc',
+              ),
+              SidebarSubmenuModel(
+                name: 'Packaging',
                 navigationPath: 'packaging',
               ),
               SidebarSubmenuModel(
-                // name: 'Chart',
-                name: l.S.current.stage_inventory_for_finished_products,
-                navigationPath: 'inventory',
+                name: 'Final Inventory',
+                navigationPath: 'final-inventory',
               ),
             ],
           ),
         SidebarItemModel(
-          // name: 'Calendar ',
           name: l.S.current.Logout,
           iconPath: 'assets/images/sidebar_icons/note-list.svg',
           navigationPath: '/authentication/signin',

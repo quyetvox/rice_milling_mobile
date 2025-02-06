@@ -250,9 +250,9 @@ class _AddBusinessSettingState extends State<AddIngredientDialog> {
                       InputText(
                         label: l.S.current.factory_initial_stock_qty,
                         keyboardType: TextInputType.number,
-                        isDisable: widget.ingredient != null,
+                        isReadOnly: widget.ingredient != null,
                         controller: _ctrlInitStock,
-                        onChange: (value) {
+                        onChanged: (value) {
                           if (_ctrlInitStock.text.isEmpty ||
                               _ctrlStockQty.text.isEmpty) return;
                           _ctrlTotalStock.text =
@@ -267,7 +267,7 @@ class _AddBusinessSettingState extends State<AddIngredientDialog> {
                         label: l.S.current.factory_stock_qty,
                         keyboardType: TextInputType.number,
                         controller: _ctrlStockQty,
-                        onChange: (value) {
+                        onChanged: (value) {
                           if (_ctrlInitStock.text.isEmpty ||
                               _ctrlStockQty.text.isEmpty) return;
                           _ctrlTotalStock.text =
@@ -281,7 +281,7 @@ class _AddBusinessSettingState extends State<AddIngredientDialog> {
                       InputText(
                           label: l.S.current.factory_total_current_stock_qty,
                           keyboardType: TextInputType.number,
-                          isDisable: true,
+                          isReadOnly: true,
                           controller: _ctrlTotalStock),
                       const SizedBox(height: 20),
                       InputText(

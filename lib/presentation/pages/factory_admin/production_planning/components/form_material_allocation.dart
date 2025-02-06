@@ -127,17 +127,17 @@ class _MAddFormulaIngredientState extends State<MAddMaterialAllocation> {
         InputText(
             label: l.S.current.factory_material_qty_allocated,
             hintText: l.S.current.action_select,
-            isDisable: true,
+            isReadOnly: true,
             controller: widget.dAddMaterialAllocation.ctrlMaterialQty),
         const SizedBox(height: 20),
         InputText(
             label: l.S.current.factory_available_stock,
-            isDisable: true,
+            isReadOnly: true,
             controller: widget.dAddMaterialAllocation.ctrlAvailableStock),
         const SizedBox(height: 20),
         InputText(
             label: l.S.current.factory_remaining_stock_after_alloc,
-            isDisable: true,
+            isReadOnly: true,
             controller: widget.dAddMaterialAllocation.ctrlRemainingStock),
       ],
     );

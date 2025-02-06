@@ -11,23 +11,23 @@ class InputText extends StatelessWidget {
       required this.controller,
       this.keyboardType = TextInputType.text,
       this.maxlines = 1,
-      this.isDisable = false,
-      this.onChange,
+      this.isReadOnly = false,
+      this.onChanged,
       this.onTapOutside});
   final String label;
   String? hintText;
   final TextEditingController controller;
   final TextInputType keyboardType;
   final int maxlines;
-  final bool isDisable;
-  final Function(String value)? onChange;
+  final bool isReadOnly;
+  final Function(String value)? onChanged;
   final Function()? onTapOutside;
 
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return IgnorePointer(
-      ignoring: isDisable,
+      ignoring: isReadOnly,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,12 +37,12 @@ class InputText extends StatelessWidget {
             keyboardType: keyboardType,
             controller: controller,
             style:
-                TextStyle(color: isDisable ? AcnooAppColors.kNeutral500 : null),
+                TextStyle(color: isReadOnly ? AcnooAppColors.kNeutral500 : null),
             maxLines: maxlines,
             decoration: InputDecoration(
                 hintText: hintText ?? label, hintStyle: textTheme.bodySmall),
             validator: (value) => value?.isEmpty ?? true ? hintText : null,
-            onChanged: onChange,
+            onChanged: onChanged,
             onTapOutside: (event) {
               onTapOutside;
             },
